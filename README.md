@@ -16,7 +16,7 @@ Run `npm i @zulkarnainshah/ng-rating-bar` to install the library
    import NgRatingBarModule from @zulkarnainshah/ng-rating-bar
    ```
 
-2. Then add `NgRatingBarModule` in the imports array:
+2. Then add `NgRatingBarModule` in the imports array of `app.module.ts`:
 
    ```
    imports: [...., NgRatingBarModule]
@@ -24,5 +24,5 @@ Run `npm i @zulkarnainshah/ng-rating-bar` to install the library
 
 3. Now you can use the component in any of your templates like below:
 4. ```
-   <ng-rating-bar [rating]="4" [maxStars]="5">
+   <ng-rating-bar [rating]="4" [maxStars]="5"></ng-rating-bar>
    ```
