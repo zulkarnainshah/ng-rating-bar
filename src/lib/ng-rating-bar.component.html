@@ -1,16 +1,23 @@
 <!-- Full-filled stars -->
 <img
   *ngFor="let _ of [].constructor(wholeNumbers)"
-  src="../../assets/star_filled.png"
+  src="{{ filledImgSrc }}"
   class="star"
+  [ngStyle]="{ width: size }"
 />
 
 <!-- Half-filled stars -->
-<img *ngIf="hasFractions" src="../../assets/star_half.png" class="star" />
+<img
+  *ngIf="hasFractions"
+  src="{{ halfFilledImgSrc }}"
+  class="star"
+  [ngStyle]="{ width: size }"
+/>
 
 <!-- Empty stars -->
 <img
-  *ngFor="let _ of [].constructor(emptyStars)"
-  src="../../assets/star_empty.png"
+  *ngFor="let _ of [].constructor(totalStars)"
+  src="{{ emptyImgSrc }}"
   class="star"
+  [ngStyle]="{ width: size }"
 />
