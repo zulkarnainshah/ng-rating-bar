@@ -44,7 +44,7 @@ imports: [...., NgRatingBarModule]
 
 ## Using custom images for stars (optional):
 
-By default 3 image resources are included with the library for showing filled, half and empty stars. You can modify the images for each of those states by supplying your own images. Just place your **png** images _(at least 256 x 256)_ inside the **assets** folder (not necessarily inside the **ng-rating-bar** folder) and pass them as input parameters to the component for the following attributes:
+By default 3 image resources are included with the library for showing filled, half and empty stars. You can modify the images for each of those states by supplying your own images. Just place your **png** images _(at least 256 x 256)_ inside the **assets** folder (not necessarily inside the **ng-rating-bar** folder) and pass their path as input parameters to the component for the following attributes:
 
 - filledImgSrc
 - halfFilledImgSrc
