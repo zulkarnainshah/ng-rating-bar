@@ -6,10 +6,11 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./ng-rating-bar.component.scss"],
 })
 export class NgRatingBarComponent implements OnInit {
-  @Input() rating: number | undefined;
-  @Input() filledImgSrc?: string = "../../assets/star_filled.png";
-  @Input() emptyImgSrc?: string = "../../assets/star_empty.png";
-  @Input() halfFilledImgSrc?: string = "../../assets/star_half.png";
+  @Input() rating: number = 0;
+  @Input() filledImgSrc?: string = "../../assets/ng-rating-bar/star_filled.png";
+  @Input() emptyImgSrc?: string = "../../assets/ng-rating-bar/star_empty.png";
+  @Input() halfFilledImgSrc?: string =
+    "../../assets/ng-rating-bar/star_half.png";
   @Input() size: string = "15px";
   @Input() totalStars: number = 5;
 
