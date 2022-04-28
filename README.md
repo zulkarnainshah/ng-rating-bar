@@ -8,27 +8,39 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Run `npm i @zulkarnainshah/ng-rating-bar` to install the library
 2. Create a new folder named **ng-rating-bar** inside your **assets** folder
-3. Modify your **angular.json** file to add the following object to the **assets** array below the **src/assets** line :
+3. Modify your **angular.json** file to add the following object to the **assets** array after the **src/assets** line :
 
    "assets":[
    "src/favicon.ico",
    "src/assets",
-   `{ "glob": "**/*", "input": "./node_modules/@zulkarnainshah/ng-rating-bar/assets", "output": "./assets/ng-rating-bar" }`
+
+   ```json
+   {
+     "glob": "**/*",
+     "input": "./node_modules/@zulkarnainshah/ng-rating-bar/assets",
+     "output": "./assets/ng-rating-bar"
+   }
+   ```
+
    ]
 
 ## Import
 
 1. In your `app.module.ts` file add the following import:
 
-   ```
-   import NgRatingBarModule from @zulkarnainshah/ng-rating-bar
-   ```
+```
+
+import NgRatingBarModule from @zulkarnainshah/ng-rating-bar
+
+```
 
 2. Then add `NgRatingBarModule` in the imports array of `app.module.ts`:
 
-   ```
-   imports: [...., NgRatingBarModule]
-   ```
+```
+
+imports: [...., NgRatingBarModule]
+
+```
 
 ## Using custom images for stars (optional):
 
@@ -44,9 +56,9 @@ You can use the component in any of your templates like below:
 
 Example 1 : Using default 5 as totalStars and setting the rating to 4.
 
-```
+```plantuml
 <ng-rating-bar
-  [rating]="4">
+[rating]="4">
 </ng-rating-bar>
 ```
 
@@ -61,7 +73,7 @@ Example 2 : 6 totalStars with fractional rating
 
 Example 3: Changing the default size of the star images
 
-```
+```plantuml
 <ng-rating-bar
   [rating]="1.5"
   [totalStars]="10"
@@ -71,7 +83,7 @@ Example 3: Changing the default size of the star images
 
 Example 4: Using custom images for filled, half-filled and empty stars
 
-```
+```plantuml
 <ng-rating-bar
   [rating]="3.5"
   [totalStars]="5"
