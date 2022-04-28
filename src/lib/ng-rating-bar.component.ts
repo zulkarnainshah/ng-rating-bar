@@ -10,15 +10,17 @@ export class NgRatingBarComponent implements OnInit {
   @Input() filledImgSrc?: string = "../../assets/star_filled.png";
   @Input() emptyImgSrc?: string = "../../assets/star_empty.png";
   @Input() halfFilledImgSrc?: string = "../../assets/star_half.png";
-  @Input() size: string = "20px";
+  @Input() size: string = "15px";
   @Input() totalStars: number = 5;
 
-  wholeNumbers: number | undefined;
+  wholeNumbers: number = 0;
   hasFractions: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {
+    //If totalStars supplied by user is a number with decimal point
+    this.totalStars = Math.ceil(this.totalStars);
     if (this.rating != null && this.rating > this.totalStars) {
       this.rating = this.totalStars;
     }
@@ -26,7 +28,7 @@ export class NgRatingBarComponent implements OnInit {
     if (tokens) {
       var wholeNumbers = tokens[0] ? tokens[0] : this.rating?.toString();
       this.hasFractions = tokens[1] ? true : false;
-      this.wholeNumbers = wholeNumbers ? parseInt(wholeNumbers) : undefined;
+      this.wholeNumbers = wholeNumbers ? parseInt(wholeNumbers) : 0;
       this.totalStars = this.totalStars - Math.ceil(this.rating!);
     }
   }
