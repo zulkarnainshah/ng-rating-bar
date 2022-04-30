@@ -1,6 +1,6 @@
 # NgRatingBar
 
-**ng-rating-bar** is a fully customizable rating bar component for Angular based applications (including ionic apps which have Angular as their underlying framework). It supports displaying read-only ratings, editable ratings, average ratings, customizable icons/images to use in place of the default stars and much more.
+**ng-rating-bar** is a fully customizable rating bar component for Angular based applications. It supports displaying read-only ratings, editable ratings, average ratings, customizable icons/images to use in place of the default stars and much more.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
@@ -104,3 +104,9 @@ Example 4: Using custom images for filled, half-filled and empty stars
 | filledImgSrc     | string | optional | assets/ng-rating-bar/star_filled.png |
 | halfFilledImgSrc | string | optional | assets/ng-rating-bar/star_half.png   |
 | emptyImgSrc      | string | optional | assets/ng-rating-bar/star_empty.png  |
+
+## Events table
+
+| Name          | Return Type | Required | Fires when            |
+| :------------ | ----------- | -------- | :-------------------- |
+| ratingChanged | number      | optional | User clicks on a star |
