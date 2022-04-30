@@ -56,7 +56,7 @@ You can use the component in any of your templates like below:
 
 Example 1 : Using default 5 as totalStars and setting the rating to 4.
 
-```plantuml
+```
 <ng-rating-bar
 [rating]="4">
 </ng-rating-bar>
@@ -73,7 +73,7 @@ Example 2 : 6 totalStars with fractional rating
 
 Example 3: Changing the default size of the star images
 
-```plantuml
+```
 <ng-rating-bar
   [rating]="1.5"
   [totalStars]="10"
@@ -83,7 +83,7 @@ Example 3: Changing the default size of the star images
 
 Example 4: Using custom images for filled, half-filled and empty stars
 
-```plantuml
+```
 <ng-rating-bar
   [rating]="3.5"
   [totalStars]="5"
@@ -94,16 +94,40 @@ Example 4: Using custom images for filled, half-filled and empty stars
 </ng-rating-bar>
 ```
 
+Example 5: Disabling mouse events by passing **true** to the **disabled** property
+
+```
+<ng-rating-bar
+  [rating]="3"
+  [totalStars]="5"
+  [disabled]="true"
+  >
+</ng-rating-bar>
+```
+
+Example 6: Handling **ratingChanged** event
+
+```
+<ng-rating-bar
+  [rating]="3.5"
+  [totalStars]="5"
+  (ratingChanged)="onRatingChanged($event)">
+</ng-rating-bar>
+```
+
+**onRatingChanged** method you will implement in your component and the **$event** parameter will contain the new rating (number type)
+
 ## Properties table
 
-| Name             | Type   | Required | Default                              |
-| ---------------- | ------ | -------- | :----------------------------------- |
-| rating           | number | optional | 0                                    |
-| totalStars       | number | optional | 5                                    |
-| size             | string | optional | 20px                                 |
-| filledImgSrc     | string | optional | assets/ng-rating-bar/star_filled.png |
-| halfFilledImgSrc | string | optional | assets/ng-rating-bar/star_half.png   |
-| emptyImgSrc      | string | optional | assets/ng-rating-bar/star_empty.png  |
+| Name             | Type    | Required | Default                              |
+| ---------------- | ------- | -------- | :----------------------------------- |
+| rating           | number  | optional | 0                                    |
+| totalStars       | number  | optional | 5                                    |
+| size             | string  | optional | 20px                                 |
+| filledImgSrc     | string  | optional | assets/ng-rating-bar/star_filled.png |
+| halfFilledImgSrc | string  | optional | assets/ng-rating-bar/star_half.png   |
+| emptyImgSrc      | string  | optional | assets/ng-rating-bar/star_empty.png  |
+| disabled         | boolean | optional | false                                |
 
 ## Events table
 
