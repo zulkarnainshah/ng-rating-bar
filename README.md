@@ -134,3 +134,6 @@ Example 6: Handling **ratingChanged** event
 | Name          | Return Type | Required | Fires when            |
 | :------------ | ----------- | -------- | :-------------------- |
 | ratingChanged | number      | optional | User clicks on a star |
+
+## Demo
+![](ng-star-rating-demo.gif)
