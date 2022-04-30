@@ -1,23 +1,30 @@
-<!-- Full-filled stars -->
-<img
-  *ngFor="let _ of [].constructor(wholeNumbers)"
-  src="{{ filledImgSrc }}"
-  class="star"
-  [ngStyle]="{ width: size }"
-/>
+<div class="container" (mouseleave)="onMouseLeftContainer()">
+  <!-- Full-filled stars -->
+  <img
+    *ngFor="let _ of [].constructor(filledStars); let i = index"
+    src="{{ filledImgSrc }}"
+    class="star"
+    [ngStyle]="{ width: size }"
+    (mouseenter)="mouseEnteredFilledStar(i)"
+    (mouseleave)="mouseLeftFilledStar(i)"
+    (click)="filledStarClicked(i)"
+  />
 
-<!-- Half-filled stars -->
-<img
-  *ngIf="hasFractions"
-  src="{{ halfFilledImgSrc }}"
-  class="star"
-  [ngStyle]="{ width: size }"
-/>
+  <!-- Half-filled stars -->
+  <img
+    *ngIf="hasFractions"
+    src="{{ halfFilledImgSrc }}"
+    class="star"
+    [ngStyle]="{ width: size }"
+  />
 
-<!-- Empty stars -->
-<img
-  *ngFor="let _ of [].constructor(totalStars)"
-  src="{{ emptyImgSrc }}"
-  class="star"
-  [ngStyle]="{ width: size }"
-/>
+  <!-- Empty stars -->
+  <img
+    *ngFor="let _ of [].constructor(emptyStars); let i = index"
+    src="{{ emptyImgSrc }}"
+    class="star"
+    [ngStyle]="{ width: size }"
+    (mouseenter)="mouseEnteredEmptyStar(i)"
+    (mouseleave)="mouseLeftEmptyStar(i)"
+  />
+</div>
