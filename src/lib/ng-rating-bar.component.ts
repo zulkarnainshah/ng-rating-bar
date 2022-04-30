@@ -13,6 +13,7 @@ export class NgRatingBarComponent implements OnInit {
     '../../assets/ng-rating-bar/star_half.png';
   @Input() size: string = '15px';
   @Input() totalStars: number = 5;
+  @Input() disabled: boolean = false;
   @Output() ratingChanged = new EventEmitter<number>();
 
   editableRating: number = 0;

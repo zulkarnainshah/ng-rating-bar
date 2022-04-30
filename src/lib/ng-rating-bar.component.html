@@ -5,9 +5,9 @@
     src="{{ filledImgSrc }}"
     class="star"
     [ngStyle]="{ width: size }"
-    (mouseenter)="mouseEnteredFilledStar(i)"
-    (mouseleave)="mouseLeftFilledStar(i)"
-    (click)="filledStarClicked(i)"
+    (mouseenter)="disabled ? '' : mouseEnteredFilledStar(i)"
+    (mouseleave)="disabled ? '' : mouseLeftFilledStar(i)"
+    (click)="disabled ? '' : filledStarClicked(i)"
   />
 
   <!-- Half-filled stars -->
@@ -24,7 +24,7 @@
     src="{{ emptyImgSrc }}"
     class="star"
     [ngStyle]="{ width: size }"
-    (mouseenter)="mouseEnteredEmptyStar(i)"
-    (mouseleave)="mouseLeftEmptyStar(i)"
+    (mouseenter)="disabled ? '' : mouseEnteredEmptyStar(i)"
+    (mouseleave)="disabled ? '' : mouseLeftEmptyStar(i)"
   />
 </div>
