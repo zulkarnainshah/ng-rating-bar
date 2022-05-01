@@ -1,6 +1,6 @@
 {
   "name": "@zulkarnainshah/ng-rating-bar",
-  "version": "0.0.21",
+  "version": "0.0.26",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
@@ -24,5 +24,9 @@
     "angular star rating"
   ],
   "author": "zulkarnain shah",
-  "license": "Unlicense"
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zulkarnainshah/ng-rating-bar"
+  }
 }
