@@ -4,9 +4,9 @@
     *ngFor="let _ of [].constructor(filledStars); let i = index"
     src="{{ filledImgSrc }}"
     class="star"
-    [ngStyle]="{ width: size }"
-    (mouseenter)="disabled ? '' : mouseEnteredFilledStar(i)"
-    (mouseleave)="disabled ? '' : mouseLeftFilledStar(i)"
+    [ngStyle]="{ width: size, margin: '0px' + ' ' + gap }"
+    (mouseenter)="disabled ? '' : mouseEnteredFilledStar($event, i)"
+    (mouseleave)="disabled ? '' : mouseLeftFilledStar($event, i)"
     (click)="disabled ? '' : filledStarClicked(i)"
   />
 
@@ -15,7 +15,9 @@
     *ngIf="hasFractions"
     src="{{ halfFilledImgSrc }}"
     class="star"
-    [ngStyle]="{ width: size }"
+    (mouseenter)="disabled ? '' : mouseEnteredHalfStar($event)"
+    (mouseleave)="disabled ? '' : mouseLeftHalfStar($event)"
+    [ngStyle]="{ width: size, margin: '0px' + ' ' + gap }"
   />
 
   <!-- Empty stars -->
@@ -23,8 +25,8 @@
     *ngFor="let _ of [].constructor(emptyStars); let i = index"
     src="{{ emptyImgSrc }}"
     class="star"
-    [ngStyle]="{ width: size }"
-    (mouseenter)="disabled ? '' : mouseEnteredEmptyStar(i)"
-    (mouseleave)="disabled ? '' : mouseLeftEmptyStar(i)"
+    [ngStyle]="{ width: size, margin: '0px' + ' ' + gap }"
+    (mouseenter)="disabled ? '' : mouseEnteredEmptyStar($event, i)"
+    (mouseleave)="disabled ? '' : mouseLeftEmptyStar($event)"
   />
 </div>

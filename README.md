@@ -88,9 +88,9 @@ Example 4: Using custom images for filled, half-filled and empty stars
   [rating]="3.5"
   [totalStars]="5"
   size="25px"
-  [filledImgSrc]="'../../assets/tomato.png'"
-  [halfFilledImgSrc]="'../../assets/tomato_half.png'"
-  [emptyImgSrc]="'../../assets/tomato_empty.png'">
+  filledImgSrc="../../assets/tomato.png"
+  halfFilledImgSrc="../../assets/tomato_half.png"
+  emptyImgSrc="../../assets/tomato_empty.png">
 </ng-rating-bar>
 ```
 
@@ -120,7 +120,7 @@ Example 6: Handling **ratingChanged** event
 ## Properties table
 
 | Name             | Type    | Required | Default                              |
-| ---------------- | ------- | -------- | :----------------------------------- |
+| :--------------- | ------- | -------- | :----------------------------------- |
 | rating           | number  | optional | 0                                    |
 | totalStars       | number  | optional | 5                                    |
 | size             | string  | optional | 20px                                 |
@@ -128,6 +128,8 @@ Example 6: Handling **ratingChanged** event
 | halfFilledImgSrc | string  | optional | assets/ng-rating-bar/star_half.png   |
 | emptyImgSrc      | string  | optional | assets/ng-rating-bar/star_empty.png  |
 | disabled         | boolean | optional | false                                |
+| animateOnHover   | boolean | optional | true                                 |
+| gap              | string  | optional | 3px                                  |
 
 ## Events table
 

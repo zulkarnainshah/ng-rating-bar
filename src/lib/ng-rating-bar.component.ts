@@ -14,6 +14,8 @@ export class NgRatingBarComponent implements OnInit {
   @Input() size: string = '15px';
   @Input() totalStars: number = 5;
   @Input() disabled: boolean = false;
+  @Input() animateOnHover: boolean = true;
+  @Input() gap: string = '3px';
   @Output() ratingChanged = new EventEmitter<number>();
 
   editableRating: number = 0;
@@ -47,23 +49,48 @@ export class NgRatingBarComponent implements OnInit {
     }
   }
 
-  mouseEnteredFilledStar(index: number) {
+  mouseEnteredFilledStar(event: any, index: number) {
     this.filledStars = index + 1;
     this.editableRating = this.filledStars;
     this.calculateStars();
+    if (this.animateOnHover) {
+      event.target.classList.add('hover-animation');
+    }
   }
 
-  mouseEnteredEmptyStar(index: number) {
+  mouseEnteredEmptyStar(event: any, index: number) {
     this.editableRating = this.filledStars + (index + 1);
     this.calculateStars();
+    if (this.animateOnHover) {
+      event.target.classList.add('hover-animation');
+    }
   }
 
-  mouseLeftFilledStar(index: number) {
+  mouseEnteredHalfStar(event: any) {
+    if (this.animateOnHover) {
+      event.target.classList.add('hover-animation');
+    }
+  }
+
+  mouseLeftFilledStar(event: any, index: number) {
     this.editableRating = this.filledStars - (index - 1);
     this.calculateStars();
+    if (this.animateOnHover) {
+      event.target.classList.remove('hover-animation');
+    }
   }
 
-  mouseLeftEmptyStar(index: number) {}
+  mouseLeftEmptyStar(event: any) {
+    if (this.animateOnHover) {
+      event.target.classList.remove('hover-animation');
+    }
+  }
+
+  mouseLeftHalfStar(event: any) {
+    if (this.animateOnHover) {
+      event.target.classList.remove('hover-animation');
+    }
+  }
 
   onMouseLeftContainer() {
     this.editableRating = this.rating;
