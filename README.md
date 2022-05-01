@@ -136,4 +136,5 @@ Example 6: Handling **ratingChanged** event
 | ratingChanged | number      | optional | User clicks on a star |
 
 ## Demo
-![](ng-star-rating-demo.gif)
+
+![](https://github.com/zulkarnainshah/ng-rating-bar/blob/main/ng-star-rating-demo.gif?raw=true)
